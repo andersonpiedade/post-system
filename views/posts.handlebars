@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #3f8f56;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            justify-content: space-around;
+            font-family: sans-serif;
+            background: rgb(31, 31, 31);
+            color: #fff;
+            height: 70px;
+        }
+
+        #menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        #menu a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        #menu a:hover {
+            text-decoration: underline;
+        }
+
+        .title {
+            text-align: center;
+            margin-top: 15px;
+            background: none;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            background: rgb(31, 31, 31);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 20px;
+            padding: 10px;
+            text-align: center;
+            font-size: 20px;
+            color: #fff;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+
+        <div class="logo">
+            <h2>Logo</h2>
+        </div><!-- logo -->
+        <nav>
+            <ul id="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="./form">Postar Conteúdo</a></li>
+                <li><a href="./posts">Ver Posts</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <h1 class="title">Lista de postagens</h1>
+
+    {{#each posts}}
+        {{!-- Isso mostra o horário da postagem --}}
+        {{!-- <small> {{createdAt}} </small> --}}
+        <h1> {{titulo}} </h1>
+        <p> {{conteudo}} </p>
+        <a href="/delete/{{id}}">
+            <button>Deletar</button>
+        </a>
+        <hr>
+    {{/each}}
+    
+</body>
+</html>
