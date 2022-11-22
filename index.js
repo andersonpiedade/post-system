@@ -17,7 +17,6 @@ app.use(bodyParser.json());
 // Listando todos os registros da postagens na página web;
 app.get('/posts', (req,res)=>{
     Post.findAll({order: [['id', 'DESC']]}).then(function(posts){
-        console.log(posts);
         res.render('posts',{posts: posts});
     })
 });
