@@ -43,13 +43,13 @@ app.post('/add', (req,res)=>{
 });
 
 
-// Apagando postagens
+// Apagando os posts por id
 
 app.get('/delete/:id',function(req,res){
     Post.destroy({where: {'id': req.params.id}}).then(function(){
-        res.send('Post deletado  com sucesso');
+        res.render('ok-delete-id.handlebars')
     }).catch(function(error){
-        res.send('falha ' + error);
+        res.render('error-delete-id.handlebars ' + error);
     });
 });
 
