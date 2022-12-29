@@ -53,6 +53,6 @@ app.get('/delete/:id',function(req,res){
     });
 });
 
-app.listen(3000, ()=>{
-    console.log('Server is running at port: 3000');
-});
+app.listen(3333, ()=>{
+    console.log('Server is running at port: 3333');
+})
